@@ -6,6 +6,10 @@
         margin-left: 0;
         display: flex;
         justify-items: flex-start;
+
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.07);
+        }
     }
 }
 
@@ -26,6 +30,23 @@
     }
 
     &:hover {
-        background-color: rgba(22, 24, 35, 0.03);
+        background-color: rgba(22, 24, 35, 0.6);
     }
+}
+
+.header {
+    position: relative;
+    height: 50px;
+}
+.back-btn {
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

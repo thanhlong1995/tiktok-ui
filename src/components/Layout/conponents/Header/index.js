@@ -10,6 +10,7 @@ import {
     faEarthAsia,
     faCircleQuestion,
     faKeyboard,
+    faAngleLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 
@@ -27,6 +28,19 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -47,6 +61,9 @@ function Header() {
             setSearchResult([1, 2, 3, 4, 5]);
         }, 0);
     }, []);
+
+    // Handle logic
+    const handleMenuChange = (menuItem) => {};
 
     return (
         <header className={cx('wapper')}>
@@ -85,7 +102,7 @@ function Header() {
                 <div className={cx('actions')}>
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

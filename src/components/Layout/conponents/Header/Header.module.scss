@@ -106,3 +106,26 @@
     background: transparent;
     cursor: pointer;
 }
+.icon {
+    margin: 0px 10px;
+    font-size: 2rem;
+}
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    margin-left: 20px;
+}
+.icon-upload {
+    border: 1px solid #ccc;
+    color: #333;
+}
+.action-btn {
+    font-size: 2.2rem;
+    color: #161823;
+    background-color: transparent;
+    padding: 4px 12px;
+    cursor: pointer;
+}

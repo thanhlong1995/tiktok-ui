@@ -1,22 +1,23 @@
 import { useState, forwardRef } from 'react';
+import classNames from 'classnames';
 import images from '~/assets/images';
 import styles from './Image.module.scss';
-import classNames from 'classnames';
-const Image = forwardRef(({ src, atl, fallback: avatarDefauld = images.noImage, ...props }, ref) => {
+
+const Image = forwardRef(({ src, alt, className, fallback: customFallback = images.noImage, ...props }, ref) => {
     const [fallback, setFallback] = useState('');
 
-    const handelError = () => {
-        setFallback(avatarDefauld);
+    const handleError = () => {
+        setFallback(customFallback);
     };
 
     return (
         <img
-            //className={classNames(styles.wrapper, className)}
+            className={classNames(styles.wrapper, className)}
             ref={ref}
             src={fallback || src}
-            atl={atl}
+            alt={alt}
             {...props}
-            onError={handelError}
+            onError={handleError}
         />
     );
 });

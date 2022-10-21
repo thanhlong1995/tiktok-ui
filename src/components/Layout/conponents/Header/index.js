@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -15,6 +16,7 @@ import {
 import classNames from 'classnames/bind';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import 'tippy.js/dist/tippy.css';
+import routesConfig from '~/config/routes';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images/index';
@@ -101,13 +103,15 @@ function Header() {
         <header className={cx('wapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="tiktok" />
+                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                        <img src={images.logo} alt="tiktok" />
+                    </Link>
                 </div>
                 <Search />
                 <div className={cx('actions')}>
                     <>
                         <Tippy content="Upload" placement="bottom">
-                            <Button href="/upload" className={cx('action-btn')}>
+                            <Button href={routesConfig.upload} className={cx('action-btn')}>
                                 <UploadIcon />
                             </Button>
                         </Tippy>

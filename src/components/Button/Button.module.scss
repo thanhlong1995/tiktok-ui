@@ -2,12 +2,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 100px;
     padding: 9px 16px;
     border-radius: 4px;
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: var(--font-family);
+    font-family: 'ProximaNova', sans-serif;
     cursor: pointer;
     background-color: var(--white);
     border: 1px solid transparent;
@@ -36,6 +35,7 @@
     display: inline-block;
     width: 24px;
     text-align: center;
+    margin-right: 10px;
 }
 
 // Button types

@@ -12,7 +12,7 @@ import Search from '~/pages/Seach';
 const publicLayout = [
     { path: '/', conponent: Home },
     { path: '/following', conponent: Following },
-    { path: '/profile', conponent: Profile },
+    { path: '/@:nickname', conponent: Profile },
     { path: '/upload', conponent: Upload, layout: HeaderOnly },
     { path: '/search', conponent: Search, layout: null },
 ];

@@ -1,4 +1,4 @@
-import Header from '~/components/Layout/conponents/Header';
+import Header from '~/layouts/conponents/Header';
 import Sidebar from './Sidebar';
 import classNames from 'classnames/bind';
 import styles from './DefaultLayout.module.scss';

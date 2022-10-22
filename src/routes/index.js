@@ -1,7 +1,6 @@
 // Layout
-import { DefaultLayout } from '~/components/Layout';
-import { HeaderOnly } from '~/components/Layout/';
-import routesConfig from '~/config/routes';
+import { HeaderOnly } from '~/layouts/';
+import config from '~/config/';
 
 // Pages
 import Home from '~/pages/Home';
@@ -11,11 +10,11 @@ import Upload from '~/pages/Upload';
 import Search from '~/pages/Seach';
 
 const publicLayout = [
-    { path: routesConfig.home, conponent: Home },
-    { path: routesConfig.following, conponent: Following },
-    { path: routesConfig.profile, conponent: Profile },
-    { path: routesConfig.upload, conponent: Upload, layout: HeaderOnly },
-    { path: routesConfig.search, conponent: Search, layout: null },
+    { path: config.routes.home, conponent: Home },
+    { path: config.routes.following, conponent: Following },
+    { path: config.routes.profile, conponent: Profile },
+    { path: config.routes.upload, conponent: Upload, layout: HeaderOnly },
+    { path: config.routes.search, conponent: Search, layout: null },
 ];
 const privateLayout = [];
 

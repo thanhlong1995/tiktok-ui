@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Tippy from '@tippyjs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faSpinner,
     faEllipsisVertical,
     faEarthAsia,
     faCircleQuestion,
@@ -15,16 +13,17 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
+import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import config from '~/config/';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images/index';
-import Button from '~/components/Button/Button';
+import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu/Menu';
-import { MessageIcon, UploadIcon, InboxIcon } from '~/components/Icons/Icons';
-import Image from '~/components/Image/Image';
-import Search from '../Search/Search';
+import { MessageIcon, UploadIcon, InboxIcon } from '~/components/Icons';
+import Image from '~/components/Image';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
@@ -111,9 +110,9 @@ function Header() {
                 <div className={cx('actions')}>
                     <>
                         <Tippy content="Upload" placement="bottom">
-                            <Button href={config.routes.upload} className={cx('action-btn')}>
+                            <button href={config.routes.upload} className={cx('action-btn')}>
                                 <UploadIcon />
-                            </Button>
+                            </button>
                         </Tippy>
                     </>
                     {currentUser ? (

@@ -11,6 +11,8 @@
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
+    --tux-colorSDSecondary: rgba(0, 0, 0, 0.5);
+    --tux-colorBGPrimary: rgba(255, 255, 255, 1);
 }
 
 * {
@@ -60,7 +62,7 @@ input,
     outline: none;
 }
 
-a[href] {
+a {
     color: var(--text-color);
     text-decoration: none;
 }

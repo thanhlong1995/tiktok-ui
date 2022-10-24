@@ -2,7 +2,6 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Following.module.scss';
 import 'tippy.js/dist/tippy.css';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
 import Button from '~/components/Button';
 import Popper from '@mui/material/Popper';
 

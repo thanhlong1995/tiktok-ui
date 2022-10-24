@@ -1,0 +1,96 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    margin: 0px auto;
+    padding: 32px 24px;
+    box-sizing: content-box;
+    min-height: calc(100vh - 59px);
+}
+.layout-header {
+    position: relative;
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    max-width: 510px;
+    min-width: 470px;
+    padding-right: 92px;
+}
+
+.div-share-info {
+    display: flex;
+    align-items: center;
+}
+.item-info {
+    flex: 1 1 0%;
+    cursor: pointer;
+    overflow: visible;
+    margin-left: 20px;
+}
+.title-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+}
+.div-avatar {
+    width: 116px;
+    height: 116px;
+}
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.check {
+    margin-left: 4px;
+    color: #fff;
+    background-color: #20d5ec;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    text-overflow: ellipsis;
+    height: 25px;
+    overflow: hidden;
+    max-width: 450px;
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-end;
+}
+.btn-follow {
+    min-width: 208px;
+    line-height: 22px;
+    min-height: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 16px 0px 0px;
+}
+.div-icon-function {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.btn-icon {
+    font-size: 2.2rem;
+    color: #161823;
+    background-color: transparent;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+//layout-main
+.layout-main {
+}

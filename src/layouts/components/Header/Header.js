@@ -20,7 +20,7 @@ import config from '~/config/';
 import styles from './Header.module.scss';
 import images from '~/assets/images/index';
 import Button from '~/components/Button';
-import Menu from '~/components/Popper/Menu/Menu';
+import Menu from '~/components/Popper/Menu';
 import { MessageIcon, UploadIcon, InboxIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
@@ -60,7 +60,7 @@ const MENU_ITEM_LOGIN = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
         title: 'View profile',
-        to: '/acount_name',
+        to: config.routes.profile,
     },
     {
         icon: <FontAwesomeIcon icon={faCoins} />,
@@ -94,9 +94,6 @@ function Header() {
     } else {
         menuItemResult = MENU_ITEMS;
     }
-
-    // Handle logic
-    const handleMenuChange = (menuItem) => {};
 
     return (
         <header className={cx('wapper')}>
@@ -135,7 +132,7 @@ function Header() {
                         </>
                     )}
 
-                    <Menu items={menuItemResult} onChange={handleMenuChange}>
+                    <Menu items={menuItemResult}>
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}

@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 function ItemProfile({ data }) {
     return (
-        <Button href={data.href} leftIcon={data.icon} className={cx('item-profile-name')}>
+        <Button href={data.href} leftIcon={data.icon} className={cx('item-profile-name')} large>
             {data.title}
         </Button>
     );

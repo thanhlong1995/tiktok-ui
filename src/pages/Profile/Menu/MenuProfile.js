@@ -5,19 +5,40 @@ import Tippy from '@tippyjs/react/headless';
 import { Wrapper as WrapperPopper } from '~/components/Popper';
 import ItemProfile from './ItemProfile';
 import PropTypes from 'prop-types';
+import { DropIcon } from '~/components/Icons';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
 function MenuProfile({ children, listApp = [], listMoreApp = [], hideOnClick = false }) {
+    const [listItemApp, setListItemApp] = useState(listApp);
+    const [mounted, setMounted] = useState(false);
+
     const renderItems = () => {
-        return listApp.map((item, index) => {
+        return listItemApp.map((item, index) => {
             return <ItemProfile key={index} data={item} />;
         });
     };
 
+    const handleClickShowMore = () => {
+        setListItemApp((prev) => [...prev, ...listMoreApp]);
+    };
+
+    const handleOnShow = () => {
+        setMounted(true);
+        setListItemApp(listApp);
+    };
+
     const rederResult = (attrs) => (
         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-            <WrapperPopper className={cx('menu-popper')}>{renderItems()}</WrapperPopper>
+            <WrapperPopper className={cx('menu-popper')}>
+                {renderItems()}
+                {listItemApp.length === listApp.length && (
+                    <Button onClick={handleClickShowMore}>
+                        <DropIcon />
+                    </Button>
+                )}
+            </WrapperPopper>
         </div>
     );
 
@@ -29,6 +50,8 @@ function MenuProfile({ children, listApp = [], listMoreApp = [], hideOnClick = f
             offset={[8, 12]}
             render={rederResult}
             hideOnClick={hideOnClick}
+            onShow={handleOnShow}
+            onHidden={() => setMounted(false)}
         >
             {children}
         </Tippy>
